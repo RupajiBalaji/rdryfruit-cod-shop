@@ -1,10 +1,18 @@
 import { Product } from "@/types/product";
+import almondsImg from "@/assets/products/almonds.jpg";
+import walnutsImg from "@/assets/products/walnuts.jpg";
+import cashewsImg from "@/assets/products/cashews.jpg";
+import pistachiosImg from "@/assets/products/pistachios.jpg";
+import datesImg from "@/assets/products/dates.jpg";
+import apricotsImg from "@/assets/products/apricots.jpg";
+import raisinsImg from "@/assets/products/raisins.jpg";
+import mixedDryFruitsImg from "@/assets/products/mixed-dry-fruits.jpg";
 
 export const products: Product[] = [
   {
     id: "1",
     name: "Premium Almonds",
-    image: "/api/placeholder/300/200",
+    image: almondsImg,
     description: "Fresh California almonds, rich in vitamin E and healthy fats",
     isAvailable: true,
     prices: {
@@ -17,7 +25,7 @@ export const products: Product[] = [
   {
     id: "2",
     name: "Kashmir Walnuts",
-    image: "/api/placeholder/300/200",
+    image: walnutsImg,
     description: "Premium quality Kashmir walnuts, perfect for brain health",
     isAvailable: true,
     prices: {
@@ -30,7 +38,7 @@ export const products: Product[] = [
   {
     id: "3",
     name: "Roasted Cashews",
-    image: "/api/placeholder/300/200",
+    image: cashewsImg,
     description: "Crispy roasted cashews, lightly salted for perfect taste",
     isAvailable: false,
     prices: {
@@ -43,7 +51,7 @@ export const products: Product[] = [
   {
     id: "4",
     name: "Iranian Pistachios",
-    image: "/api/placeholder/300/200",
+    image: pistachiosImg,
     description: "Premium Iranian pistachios, naturally opened and salted",
     isAvailable: true,
     prices: {
@@ -56,7 +64,7 @@ export const products: Product[] = [
   {
     id: "5",
     name: "Medjool Dates",
-    image: "/api/placeholder/300/200",
+    image: datesImg,
     description: "King of dates - large, soft, and incredibly sweet",
     isAvailable: true,
     prices: {
@@ -69,7 +77,7 @@ export const products: Product[] = [
   {
     id: "6",
     name: "Turkish Apricots",
-    image: "/api/placeholder/300/200",
+    image: apricotsImg,
     description: "Sun-dried Turkish apricots, naturally sweet and chewy",
     isAvailable: true,
     prices: {
@@ -82,7 +90,7 @@ export const products: Product[] = [
   {
     id: "7",
     name: "Golden Raisins",
-    image: "/api/placeholder/300/200",
+    image: raisinsImg,
     description: "Sweet golden raisins, perfect for snacking and baking",
     isAvailable: false,
     prices: {
@@ -95,7 +103,7 @@ export const products: Product[] = [
   {
     id: "8",
     name: "Mixed Dry Fruits",
-    image: "/api/placeholder/300/200",
+    image: mixedDryFruitsImg,
     description: "Premium mix of almonds, cashews, raisins, and dates",
     isAvailable: true,
     prices: {
