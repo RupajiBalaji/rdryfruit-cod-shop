@@ -2,13 +2,16 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight, Gift, Percent } from "lucide-react";
+import comboBg from "@/assets/offers/combo-bg.jpg";
+import festivalBg from "@/assets/offers/festival-bg.jpg";
+import bulkBg from "@/assets/offers/bulk-bg.jpg";
 
 interface Offer {
   id: string;
   title: string;
   description: string;
   discount: string;
-  bgGradient: string;
+  bgImage: string;
   icon: React.ReactNode;
 }
 
@@ -18,7 +21,7 @@ const offers: Offer[] = [
     title: "Combo Special",
     description: "Buy any 2 dry fruits and get instant discount",
     discount: "20% OFF",
-    bgGradient: "bg-gradient-warm",
+    bgImage: comboBg,
     icon: <Gift className="h-6 w-6" />
   },
   {
@@ -26,7 +29,7 @@ const offers: Offer[] = [
     title: "Festival Bonanza",
     description: "Special discount on premium nuts collection",
     discount: "15% OFF",
-    bgGradient: "bg-gradient-golden",
+    bgImage: festivalBg,
     icon: <Percent className="h-6 w-6" />
   },
   {
@@ -34,7 +37,7 @@ const offers: Offer[] = [
     title: "Bulk Purchase",
     description: "Order above ₹2000 and save big on your purchase",
     discount: "25% OFF",
-    bgGradient: "bg-gradient-fresh",
+    bgImage: bulkBg,
     icon: <Gift className="h-6 w-6" />
   }
 ];
@@ -69,14 +72,19 @@ const OffersSlider = () => {
             >
               {offers.map((offer, index) => (
                 <div key={offer.id} className="w-full flex-shrink-0">
-                  <div className={`${offer.bgGradient} p-8 text-primary-foreground relative overflow-hidden`}>
+                  <div 
+                    className="p-8 text-white relative overflow-hidden bg-cover bg-center bg-no-repeat"
+                    style={{
+                      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${offer.bgImage})`
+                    }}
+                  >
                     <div className="relative z-10">
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center space-x-3">
-                          <div className="p-2 bg-primary-foreground/20 rounded-full">
+                          <div className="p-2 bg-white/20 rounded-full">
                             {offer.icon}
                           </div>
-                          <Badge variant="secondary" className="bg-primary-foreground/20 text-primary-foreground border-primary-foreground/30">
+                          <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
                             Limited Time
                           </Badge>
                         </div>
@@ -86,14 +94,14 @@ const OffersSlider = () => {
                       </div>
                       
                       <h3 className="text-2xl font-bold mb-2">{offer.title}</h3>
-                      <p className="text-primary-foreground/90 mb-6 text-lg">
+                      <p className="text-white/90 mb-6 text-lg">
                         {offer.description}
                       </p>
                       
                       <Button 
                         variant="secondary" 
                         size="lg"
-                        className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+                        className="bg-white text-black hover:bg-white/90"
                         onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
                       >
                         Shop Now
@@ -101,8 +109,8 @@ const OffersSlider = () => {
                     </div>
                     
                     {/* Decorative elements */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary-foreground/10 rounded-full -translate-y-16 translate-x-16"></div>
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary-foreground/10 rounded-full translate-y-12 -translate-x-12"></div>
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
                   </div>
                 </div>
               ))}
