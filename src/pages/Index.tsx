@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import OffersSlider from "@/components/OffersSlider";
 import ProductsSection from "@/components/ProductsSection";
+import AboutUs from "@/components/AboutUs";
+import Contact from "@/components/Contact";
 
 const Index = () => {
   return (
@@ -10,6 +12,8 @@ const Index = () => {
       <Hero />
       <OffersSlider />
       <ProductsSection />
+      <AboutUs />
+      <Contact />
     </div>
   );
 };
